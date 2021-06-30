@@ -1,18 +1,26 @@
 {
-  "name": "vuepress-plugin-demoblock",
+  "name": "vuepress-plugin-demoblock-plus",
   "version": "1.0.0",
-  "description": "vuepress-plugin-demoblock",
+  "description": "vuepress plugin for demoblock",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xinlei3166/vuepress-plugin-demoblock"
+    "url": "https://github.com/xinlei3166/vuepress-plugin-demoblock-plus"
   },
-  "keywords": [],
+  "keywords": [
+    "vuepress",
+    "vue",
+    "plugin"
+  ],
   "bugs": {
-    "url": "https://github.com/xinlei3166/vuepress-plugin-demoblock/issues"
+    "url": "https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/issues"
   },
-  "homepage": "https://github.com/xinlei3166/vuepress-plugin-demoblock#readme",
+  "homepage": "https://github.com/xinlei3166/vuepress-plugin-demoblock-plus#readme",
   "author": "君惜",
   "license": "MIT",
+  "files": [
+    "client",
+    "node"
+  ],
   "main": "node/index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
