@@ -1,0 +1,64 @@
+{
+  "name": "vuepress-plugin-demoblock",
+  "version": "1.0.0",
+  "description": "vuepress-plugin-demoblock",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinlei3166/vuepress-plugin-demoblock"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/xinlei3166/vuepress-plugin-demoblock/issues"
+  },
+  "homepage": "https://github.com/xinlei3166/vuepress-plugin-demoblock#readme",
+  "author": "君惜",
+  "license": "MIT",
+  "main": "node/index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs --clean-cache",
+    "docs:serve": "serve docs/.vuepress/dist",
+    "test": "jest",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx,.vue",
+    "release": "yunque-release --skipBuild",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "dependencies": {
+    "markdown-it": "^12.0.4",
+    "clipboard-copy": "^4.0.1",
+    "@vuepress/plugin-shiki": "^2.0.0-beta.20",
+    "vuepress-vite": "^2.0.0-beta.19"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.39",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "@yunquejs/release": "^0.1.4",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "conventional-changelog-cli": "^2.1.1",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.5.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.3.0",
+    "ts-node": "^9.1.1",
+    "tsup": "^4.11.1",
+    "typescript": "^4.2.3",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node scripts/verify-commit.js"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
