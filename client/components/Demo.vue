@@ -41,7 +41,7 @@ import { ref, reactive, computed, watch, defineComponent, nextTick, onBeforeUnmo
 import { useRoute } from 'vue-router'
 import { useRouteLocale } from '@vuepress/client'
 import clipboardCopy from '../../node/demoblock/clipboard-copy'
-import throttle from 'lodash/throttle'
+import { throttle } from 'lodash-es'
 import { stripTemplate, stripScript, stripStyle } from '../../node/demoblock/assist'
 
 export default defineComponent({

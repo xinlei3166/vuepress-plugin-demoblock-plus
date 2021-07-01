@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "markdown-it": "^12.0.4",
-    "clipboard-copy": "^4.0.1",
+    "lodash-es": "^4.17.21",
     "@vuepress/plugin-shiki": "^2.0.0-beta.20",
     "vuepress-vite": "^2.0.0-beta.19"
   },
