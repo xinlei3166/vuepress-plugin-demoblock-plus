@@ -40,7 +40,7 @@
 import { ref, reactive, computed, watch, defineComponent, nextTick, onBeforeUnmount, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useRouteLocale } from '@vuepress/client'
-import clipboardCopy from 'clipboard-copy'
+import clipboardCopy from '../../node/demoblock/clipboard-copy'
 import throttle from 'lodash/throttle'
 import { stripTemplate, stripScript, stripStyle } from '../../node/demoblock/assist'
 

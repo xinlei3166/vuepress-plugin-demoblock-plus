@@ -3,6 +3,8 @@ node_modules
 dist
 dist-ssr
 *.local
+.cache
+.temp
 
 # local env files
 .env.local
