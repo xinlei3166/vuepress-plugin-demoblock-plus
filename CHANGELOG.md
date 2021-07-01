@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.0.2...v1.0.3) (2021-07-01)
+
+
+### Features
+
+* use lodash-es ([15d2e7a](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/15d2e7a18705f28727e480dbbc56818903c6a13a))
+
+
+
 ## [1.0.2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.0.1...v1.0.2) (2021-07-01)
 
 
