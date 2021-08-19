@@ -34,6 +34,20 @@ plugins: [
 ```
 
 
+markdown 中的vue代码被编译为了 vue 函数组件，需要把 import 转换为 require，这里可附加一些其他的转换。
+```js
+plugins: [
+  ['vuepress-plugin-demoblock-plus', {
+    scriptImports: [
+      { searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
+        replaceValue: 'const { defineComponent: _defineComponent } = Vue'
+      }
+    ]
+  }]
+]
+```
+
+
 
 多语言支持(默认是中文)
 

@@ -21,7 +21,8 @@ const blockPlugin = md => {
   })
 }
 
-const codePlugin = (md, lang = 'vue') => {
+const codePlugin = (md, options) => {
+  const lang = options?.lang || 'vue'
   const defaultRender = md.renderer.rules.fence
   md.renderer.rules.fence = (tokens, idx, options, env, self) => {
     const token = tokens[idx]
@@ -54,7 +55,7 @@ const renderDemoBlock = require('./render')
 const scriptRegexp = /^.*(<script>.*<\/script>).*$/s
 const styleRegexp = /^.*(<style>.*<\/style>).*$/s
 
-const renderPlugin = md => {
+const renderPlugin = (md, options) => {
   const render = md.render
   md.render = (...args) => {
     let result = render.call(md, ...args)
@@ -62,7 +63,7 @@ const renderPlugin = md => {
     const startTag = '<!--vue-demo:'
     const endTag = ':vue-demo-->'
     if (result.indexOf(startTag) !== -1 && result.indexOf(endTag) !== -1) {
-      const { template, script, style } = renderDemoBlock(result)
+      const { template, script, style } = renderDemoBlock(result, options)
       result = template
       const hoistedTags = arr[1].hoistedTags || (arr[1].hoistedTags = [])
       hoistedTags.push(script)
@@ -72,10 +73,10 @@ const renderPlugin = md => {
   }
 }
 
-const demoBlockPlugin = md => {
-  md.use(blockPlugin)
-  md.use(codePlugin)
-  md.use(renderPlugin)
+const demoBlockPlugin = (md, options = {}) => {
+  md.use(blockPlugin, options)
+  md.use(codePlugin, options)
+  md.use(renderPlugin, options)
 }
 
 module.exports = {

@@ -44,6 +44,12 @@ module.exports = {
     extractHeaders: { level: [ 'h2', 'h3', 'h4' ] }
   },
   plugins: [
-    [require('../../node')]
+    [require('../../node'), {
+      scriptImports: [
+        { searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
+          replaceValue: 'const { defineComponent: _defineComponent } = Vue'
+        }
+      ]
+    }]
   ]
 }

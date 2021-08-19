@@ -9,14 +9,20 @@ const defaultLocales = {
   }
 }
 
-const demoblockPlugin = ({ locales = {}, theme = 'github-light', langs = [] }, app) => {
+const demoblockPlugin = (
+  { locales = {}, theme = 'github-light', langs = [], lang = 'vue', scriptImports = [] },
+  app
+) => {
   return {
     name: 'vuepress-plugin-demoblock',
     clientAppEnhanceFiles: path.resolve(__dirname, '../client/clientAppEnhance.js'),
     extendsMarkdown: async md => {
       await shiki({ theme, langs }).extendsMarkdown(md)
       const { demoBlockPlugin } = require('./demoblock')
-      md.use(demoBlockPlugin)
+      md.use(demoBlockPlugin, {
+        lang,
+        scriptImports
+      })
     },
     define: {
       __DEMOBLOCK_LOCALES__: { ...defaultLocales, ...locales }

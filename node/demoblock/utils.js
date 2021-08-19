@@ -1,8 +1,18 @@
-const { compileTemplate, TemplateCompiler } = require('@vue/compiler-sfc')
+const { compileTemplate, TemplateCompiler, compileScript, parse } = require('@vue/compiler-sfc')
 
-function stripScript(content) {
-  const result = content.match(/<(script)>([\s\S]+)<\/\1>/)
-  return result && result[2] ? result[2].trim() : ''
+const scriptSetupRE = /<\s*script[^>]*\bsetup\b[^>]*/
+function stripScript(content, id) {
+  const result = content.match(/<(script)(?:.* \bsetup\b)?[^>]*>([\s\S]+)<\/\1>/)
+  const source = result && result[0] ? result[0].trim() : ''
+  if (source) {
+    const { descriptor } = parse(source)
+    const { content: scriptContent } = compileScript(descriptor, {
+      refSugar: true,
+      id
+    })
+    return scriptContent
+  }
+  return source
 }
 
 function stripStyle(content) {
@@ -28,7 +38,7 @@ function pad(source) {
 
 const templateReplaceRegex = /<template>([\s\S]+)<\/template>/g
 
-function genInlineComponentText(template, script) {
+function genInlineComponentText(template, script, options) {
   let source = template
   if (templateReplaceRegex.test(source)) {
     source = source.replace(templateReplaceRegex, '$1')
@@ -65,6 +75,17 @@ function genInlineComponentText(template, script) {
     script = script
       .replace(/export\s+default/, 'const democomponentExport =')
       .replace(/import ({.*}) from 'vue'/g, (s, s1) => `const ${s1} = Vue`)
+      .replace(
+        /const ({ defineComponent as _defineComponent }) = Vue/g,
+        'const { defineComponent: _defineComponent } = Vue'
+      )
+
+    // 因为 vue 函数组件需要把 import 转换为 require，这里可附加一些其他的转换。
+    if (options?.scriptImports) {
+      for (const s of options.scriptImports) {
+        script = script.replace(s.searchValue, s.replaceValue)
+      }
+    }
   } else {
     script = 'const democomponentExport = {}'
   }
