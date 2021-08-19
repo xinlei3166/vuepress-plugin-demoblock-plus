@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-demoblock-plus",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "vuepress plugin for demoblock",
   "repository": {
     "type": "git",

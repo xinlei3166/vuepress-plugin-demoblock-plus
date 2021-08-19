@@ -1,4 +1,9 @@
-## [1.0.5](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.0.4...v1.0.5) (2021-08-18)
+# [1.1.0](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.0.4...v1.1.0) (2021-08-19)
+
+
+### Features
+
+* vuepress-plugin-demoblock-plus@1.1.0, support script setup and typescript, support custom scriptImports and custom lang ([38d7235](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/38d7235f810f91e7c8df08cb37738f3b04070bba))
 
 
 
