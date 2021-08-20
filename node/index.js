@@ -1,4 +1,4 @@
-const path = require('path')
+const { path } = require('@vuepress/utils')
 const { shikiPlugin: shiki } = require('@vuepress/plugin-shiki')
 
 const defaultLocales = {
