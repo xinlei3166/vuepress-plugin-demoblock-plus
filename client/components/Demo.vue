@@ -1,35 +1,43 @@
 <template>
   <div
-    :class="['demo-block', blockClass, customClass ? customClass : '', { hover } ]"
-    @mouseenter='hover=true'
-    @mouseleave='hover=false'>
-    <div class='source'>
+    :class="['demo-block', blockClass, customClass ? customClass : '', { hover }]"
+    @mouseenter="hover = true"
+    @mouseleave="hover = false"
+  >
+    <div class="source">
       <slot />
     </div>
-    <div class='meta' ref='meta'>
-      <div v-if='$slots.description' class='description' ref='description'>
-        <slot name='description' />
+    <div ref="meta" class="meta">
+      <div v-if="$slots.description" ref="description" class="description">
+        <slot name="description" />
       </div>
-      <div class='highlight' ref='highlight'>
-        <slot name='highlight' />
+      <div ref="highlight" class="highlight">
+        <slot name="highlight" />
       </div>
     </div>
     <div
-      class='demo-block-control'
-      ref='control'
+      ref="control"
+      class="demo-block-control"
       :class="{ 'is-fixed': fixedControl }"
-      @click='isExpanded=!isExpanded'>
-      <transition name='arrow-slide'>
+      @click="isExpanded = !isExpanded"
+    >
+      <transition name="arrow-slide">
         <i
-          :class="['iconfont', 'control-icon', { 'icon-caret-down': !isExpanded, 'icon-caret-up': isExpanded, 'hovering': hover }]"></i>
+          :class="[
+            'iconfont',
+            'control-icon',
+            { 'icon-caret-down': !isExpanded, 'icon-caret-up': isExpanded, hovering: hover }
+          ]"
+        ></i>
       </transition>
-      <transition name='text-slide'>
-        <span v-show='hover' class='control-text'>{{ controlText }}</span>
+      <transition name="text-slide">
+        <span v-show="hover" class="control-text">{{ controlText }}</span>
       </transition>
-      <div class='control-button-wrap'>
-        <transition name='text-slide'>
-          <span v-show='isExpanded' class='control-button copy-button'
-                @click.stop='onCopy'>{{ locale && locale['copy-button-text'] }}</span>
+      <div class="control-button-wrap">
+        <transition name="text-slide">
+          <span v-show="isExpanded" class="control-button copy-button" @click.stop="onCopy">
+            {{ locale && locale['copy-button-text'] }}
+          </span>
         </transition>
       </div>
     </div>
@@ -37,7 +45,16 @@
 </template>
 
 <script>
-import { ref, reactive, computed, watch, defineComponent, nextTick, onBeforeUnmount, onMounted } from 'vue'
+import {
+  ref,
+  reactive,
+  computed,
+  watch,
+  defineComponent,
+  nextTick,
+  onBeforeUnmount,
+  onMounted
+} from 'vue'
 import { useRoute } from 'vue-router'
 import { useRouteLocale } from '@vuepress/client'
 import clipboardCopy from '../../node/demoblock/clipboard-copy'
@@ -55,7 +72,7 @@ export default defineComponent({
       default: () => ({})
     }
   },
-  setup (props) {
+  setup(props) {
     const hover = ref(false)
     const fixedControl = ref(false)
     const isExpanded = ref(false)
@@ -109,12 +126,12 @@ export default defineComponent({
 
     const onCopy = () => {
       clipboardCopy(props.sourceCode)
-      alert('复制成功')
+      alert(locale.value['copy-success-text'])
     }
 
     const goCodepen = () => {}
 
-    watch(isExpanded, (val) => {
+    watch(isExpanded, val => {
       meta.value.style.height = val ? `${codeAreaHeight.value + 1}px` : '0'
       if (!val) {
         fixedControl.value = false
@@ -141,28 +158,39 @@ export default defineComponent({
     })
 
     return {
-      blockClass, hover, fixedControl, isExpanded, locale, controlText, highlight, description, meta, control, onCopy, goCodepen
+      blockClass,
+      hover,
+      fixedControl,
+      isExpanded,
+      locale,
+      controlText,
+      highlight,
+      description,
+      meta,
+      control,
+      onCopy,
+      goCodepen
     }
   }
 })
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .demo-block {
   margin: 10px 0;
   border: solid 1px var(--demoblock-border);
   border-radius: 3px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .demo-block.hover {
-  box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5);
+  box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
 }
 
 .source {
   box-sizing: border-box;
   padding: 24px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .meta {
@@ -170,7 +198,7 @@ export default defineComponent({
   background-color: var(--code-bg-color);
   overflow: hidden;
   height: 0;
-  transition: height .2s;
+  transition: height 0.2s;
 }
 
 .description {
@@ -211,7 +239,7 @@ export default defineComponent({
   display: inline-block;
   font-size: 16px;
   line-height: 44px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .demo-block-control .control-icon.hovering {
@@ -224,7 +252,7 @@ export default defineComponent({
   font-size: 14px;
   line-height: 44px;
   font-weight: 500;
-  transition: .3s;
+  transition: 0.3s;
   display: inline-block;
 }
 

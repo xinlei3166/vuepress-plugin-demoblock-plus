@@ -34,7 +34,7 @@
   "dependencies": {
     "markdown-it": "^12.0.4",
     "lodash-es": "^4.17.21",
-    "@vuepress/plugin-shiki": "^2.0.0-beta.20",
+    "@vuepress/plugin-shiki": "^2.0.0-beta.24",
     "vuepress-vite": "^2.0.0-beta.24"
   },
   "devDependencies": {
@@ -45,6 +45,8 @@
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.7.0",
+    "vue-eslint-parser": "^7.6.0",
     "conventional-changelog-cli": "^2.1.1",
     "jest": "^26.1.0",
     "lint-staged": "^10.5.4",

@@ -5,7 +5,8 @@ const defaultLocales = {
   '/': {
     'hide-text': '隐藏代码',
     'show-text': '显示代码',
-    'copy-button-text': '复制代码片段'
+    'copy-button-text': '复制代码片段',
+    'copy-success-text': '复制成功'
   }
 }
 
@@ -14,7 +15,7 @@ const demoblockPlugin = (
   app
 ) => {
   return {
-    name: 'vuepress-plugin-demoblock',
+    name: 'vuepress-plugin-demoblock-plus',
     clientAppEnhanceFiles: path.resolve(__dirname, '../client/clientAppEnhance.js'),
     extendsMarkdown: async md => {
       await shiki({ theme, langs }).extendsMarkdown(md)
