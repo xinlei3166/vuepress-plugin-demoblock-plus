@@ -1,3 +1,13 @@
+## [1.1.1](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.1.0...v1.1.1) (2021-08-20)
+
+
+### Features
+
+* copy success text i18n ([4811082](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/4811082a70031ac1154e86be89babdb439378171))
+* path is imported from @vuepress/utils ([3f73afd](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/3f73afdd67ee795352e003784486657dd86e45fb))
+
+
+
 # [1.1.0](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.0.4...v1.1.0) (2021-08-19)
 
 
