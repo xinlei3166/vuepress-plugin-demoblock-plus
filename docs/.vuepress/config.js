@@ -61,6 +61,7 @@ module.exports = {
   plugins: [
     [require('../../node'), {
       locales,
+      cssPreprocessor: 'less',
       scriptImports: [
         { searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
           replaceValue: 'const { defineComponent: _defineComponent } = Vue'

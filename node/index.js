@@ -11,7 +11,14 @@ const defaultLocales = {
 }
 
 const demoblockPlugin = (
-  { locales = {}, theme = 'github-light', langs = [], lang = 'vue', scriptImports = [] },
+  {
+    locales = {},
+    theme = 'github-light',
+    langs = [],
+    lang = 'vue',
+    cssPreprocessor = '',
+    scriptImports = []
+  },
   app
 ) => {
   return {
@@ -22,6 +29,7 @@ const demoblockPlugin = (
       const { demoBlockPlugin } = require('./demoblock')
       md.use(demoBlockPlugin, {
         lang,
+        cssPreprocessor,
         scriptImports
       })
     },

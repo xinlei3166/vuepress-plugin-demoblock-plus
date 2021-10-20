@@ -57,8 +57,8 @@ import {
 } from 'vue'
 import { useRoute } from 'vue-router'
 import { useRouteLocale } from '@vuepress/client'
+import { throttle } from '../../node/demoblock/throttle'
 import clipboardCopy from '../../node/demoblock/clipboard-copy'
-import { throttle } from 'lodash-es'
 import { stripTemplate, stripScript, stripStyle } from '../../node/demoblock/assist'
 
 export default defineComponent({
@@ -268,7 +268,6 @@ export default defineComponent({
 }
 
 .demo-block-control .control-button {
-  padding: 14px 0;
   color: var(--c-brand);
   font-size: 14px;
   font-weight: 500;
@@ -276,7 +275,7 @@ export default defineComponent({
 }
 
 .demo-block-control .control-button-wrap {
-  line-height: 44px;
+  line-height: 43px;
   position: absolute;
   top: 0;
   right: 0;
