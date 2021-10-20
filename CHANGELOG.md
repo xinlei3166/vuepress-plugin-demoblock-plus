@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.1.1...v1.2.0) (2021-10-20)
+
+
+### Features
+
+* support css preprocessors, remove lodash-es, Optimize package volume, reduce first load time ([54c0592](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/54c059222b2993f199aa883101e700de3b61cace))
+
+
+
 ## [1.1.1](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.1.0...v1.1.1) (2021-08-20)
 
 
