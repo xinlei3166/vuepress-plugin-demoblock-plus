@@ -1,3 +1,12 @@
+## [1.2.3](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.2.0...v1.2.3) (2021-10-21)
+
+
+### Bug Fixes
+
+* **Demo:** demo-block-control样式问题；代码展开/收起的操作区未遮挡语言的问题 ([865af44](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/865af44fd49fd37de470b4a9dba11438bc73515f))
+
+
+
 # [1.2.0](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.1.1...v1.2.0) (2021-10-20)
 
 
