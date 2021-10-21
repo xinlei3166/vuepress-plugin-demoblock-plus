@@ -1,3 +1,12 @@
+## [1.2.5](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.2.3...v1.2.5) (2021-10-21)
+
+
+### Bug Fixes
+
+* **Demo:** 已经有一个展开操作区固定在下方的情况下，再展开一个会出现重叠的现象 ([2afc842](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/2afc842aa4b19f0e4629e9a64e67146203c93847))
+
+
+
 ## [1.2.3](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.2.0...v1.2.3) (2021-10-21)
 
 
