@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="demoBlock"
     :class="['demo-block', blockClass, customClass ? customClass : '', { hover }]"
     @mouseenter="hover = true"
     @mouseleave="hover = false"
@@ -103,6 +104,7 @@ export default defineComponent({
     const description = ref(null)
     const meta = ref(null)
     const control = ref(null)
+    const demoBlock = ref(null)
 
     const codeAreaHeight = computed(() => {
       if (description.value) {
@@ -116,12 +118,15 @@ export default defineComponent({
       const innerHeight = window.innerHeight || document.body.clientHeight
       fixedControl.value = bottom > innerHeight && top + 44 <= innerHeight
       control.value.style.left = fixedControl.value ? `${left}px` : '0'
+      const dv = fixedControl.value ? 1 : 2
+      control.value.style.width = `${demoBlock.value.offsetWidth - dv}px`
     }
 
     const scrollHandler = throttle(_scrollHandler, 200)
 
     const removeScrollHandler = () => {
       window.removeEventListener('scroll', scrollHandler)
+      window.removeEventListener('resize', scrollHandler)
     }
 
     const onCopy = () => {
@@ -136,11 +141,13 @@ export default defineComponent({
       if (!val) {
         fixedControl.value = false
         control.value.style.left = '0'
+        control.value.style.width = `${demoBlock.value.offsetWidth - 2}px`
         removeScrollHandler()
         return
       }
       setTimeout(() => {
         window.addEventListener('scroll', scrollHandler)
+        window.addEventListener('resize', scrollHandler)
         _scrollHandler()
       }, 300)
     })
@@ -169,7 +176,8 @@ export default defineComponent({
       meta,
       control,
       onCopy,
-      goCodepen
+      goCodepen,
+      demoBlock
     }
   }
 })
@@ -232,7 +240,7 @@ export default defineComponent({
   bottom: 0;
   width: calc(100% - 20rem - 3rem - 12.5rem - 1px);
   border-right: solid 1px var(--demoblock-border);
-  z-index: 1;
+  z-index: 2;
 }
 
 .demo-block-control .control-icon {
