@@ -52,9 +52,13 @@ markdown 中的vue代码被编译为了 vue 函数组件，需要把 import 转�
 ```js
 plugins: [
   ['vuepress-plugin-demoblock-plus', {
-    scriptImports: [
+    scriptImports: ["import * as ElementPlus from 'element-plus'"],
+    scriptReplaces: [
       { searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
         replaceValue: 'const { defineComponent: _defineComponent } = Vue'
+      },
+      { searchValue: /import ({.*}) from 'element-plus'/g,
+        replaceValue: (s, s1) => `const ${s1} = ElementPlus`
       }
     ]
   }]
@@ -85,4 +89,47 @@ plugins: [
 	['vuepress-plugin-demoblock-plus', { locales }]
 ]
 ```
+
+
+## 使用第三方组件库
+
+这个插件主要是针对自己的组件库来使用的，第三方的组件库直接导入使用即可(例如element-plus)。
+
+在 .vuepress/clientAppEnhance.js 文件中加入以下代码：
+```js
+import { defineClientAppEnhance } from '@vuepress/client'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
+export default defineClientAppEnhance(({
+  app,
+  router,
+  siteData,
+}) => {
+  app.use(ElementPlus)
+})
+```
+
+使用的时候，不用导入element组件，直接使用即可：
+```vue
+<template>
+  <div class="card-wrap">
+    <div class="card">{{ title }}</div>
+    <el-button type="primary" @click="onClick">点击</el-button>
+  </div>
+</template>
+
+<script setup>
+import { ref, getCurrentInstance } from 'vue'
+
+const title = ref('vuepress-plugin-demoblock-plus')
+
+const instance = getCurrentInstance()
+
+const onClick = () => {
+  instance.appContext.config.globalProperties.$message.success('消息')
+}
+</script>
+```
+
 

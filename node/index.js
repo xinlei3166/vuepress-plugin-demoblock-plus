@@ -17,7 +17,8 @@ const demoblockPlugin = (
     langs = [],
     lang = 'vue',
     cssPreprocessor = '',
-    scriptImports = []
+    scriptImports = [],
+    scriptReplaces = []
   },
   app
 ) => {
@@ -30,7 +31,8 @@ const demoblockPlugin = (
       md.use(demoBlockPlugin, {
         lang,
         cssPreprocessor,
-        scriptImports
+        scriptImports,
+        scriptReplaces
       })
     },
     define: {
