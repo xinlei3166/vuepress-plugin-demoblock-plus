@@ -203,6 +203,7 @@ export default defineComponent({
   box-sizing: border-box;
   padding: 24px;
   transition: 0.2s;
+  overflow: auto;
 }
 
 .meta {
