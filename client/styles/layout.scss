@@ -1,0 +1,12 @@
+// vuepress layout
+.theme-default-content:not(.custom), .page-meta, .page-nav {
+  max-width: unset !important;
+  padding-left: 3rem !important;
+  padding-right: 12.5rem !important;
+}
+
+@media only screen and (max-width: 992px) {
+  .theme-default-content:not(.custom), .page-meta, .page-nav {
+    padding: 0 1.5rem 4rem !important;
+  }
+}

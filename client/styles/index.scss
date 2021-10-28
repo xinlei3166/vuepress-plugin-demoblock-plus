@@ -1,6 +1,5 @@
+@import './layout.scss';
 @import './code.scss';
-@import './custom.scss';
-@import './iconfont/iconfont.css';
 
 :root {
   --font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -16,11 +15,60 @@
   --demoblock-control-bg-hover: #f9fafc;
 }
 
-.icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
+// vuepress
+.hero img {
+  width: 200px;
+  //height: 200px;
 }
 
+.nav-bar .logo {
+  height: 30px;
+  margin-right: 2px;
+}
+
+.custom-block.tip {
+  border-color: var(--c-brand-light);
+}
+
+.DocSearch {
+  --docsearch-primary-color: var(--c-brand) !important;
+}
+
+// icon-caret
+.icon-caret-down {
+  width: 16px;
+  height: 100%;
+  position: relative;
+}
+
+.icon-caret-down::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top: 7.5px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -2.5px;
+  margin-left: -6px;
+}
+
+.icon-caret-up {
+  width: 16px;
+  height: 100%;
+  position: relative;
+}
+
+.icon-caret-up::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-bottom: 7px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -8.5px;
+  margin-left: -6px;
+}

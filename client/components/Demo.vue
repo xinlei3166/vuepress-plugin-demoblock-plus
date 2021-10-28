@@ -19,12 +19,11 @@
     <div
       ref="control"
       :class="['demo-block-control', { 'is-fixed': fixedControl }]"
-      @click="isExpanded = !isExpanded"
+      @click="onClickControl"
     >
       <transition name="arrow-slide">
         <i
           :class="[
-            'iconfont',
             'control-icon',
             { 'icon-caret-down': !isExpanded, 'icon-caret-up': isExpanded, hovering: hover }
           ]"
@@ -88,6 +87,11 @@ export default defineComponent({
       const component = pathArr[pathArr.length - 1].split('.')[0]
       return `demo-${component}`
     })
+
+    const onClickControl = () => {
+      isExpanded.value = !isExpanded.value
+      hover.value = isExpanded.value
+    }
 
     const routeLocale = useRouteLocale()
     const locale = computed(() => {
@@ -170,6 +174,7 @@ export default defineComponent({
       isExpanded,
       locale,
       controlText,
+      onClickControl,
       highlight,
       description,
       meta,
