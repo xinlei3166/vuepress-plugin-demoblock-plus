@@ -1,3 +1,17 @@
+## [1.3.2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.3.0...v1.3.2) (2021-10-29)
+
+
+### Bug Fixes
+
+* 图标去iconfont，移动端展开后收起时controlText不消失的问题 ([924535f](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/924535fb9540a8e3a23026107c32ab5267e34bde))
+
+
+### Features
+
+* demo source overflow auto ([43d06d4](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/43d06d4c088f141fca1c7991cb3ad90017ba4575))
+
+
+
 # [1.3.0](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.2.7...v1.3.0) (2021-10-27)
 
 
