@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.3.2...v1.4.0) (2021-11-10)
+
+
+### Features
+
+* 复制代码后 toast 展示成功 ([9540d3b](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/9540d3bb5d8b160e3b119f9d3f5faaefd5892eb5))
+
+
+
 ## [1.3.2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.3.0...v1.3.2) (2021-10-29)
 
 
