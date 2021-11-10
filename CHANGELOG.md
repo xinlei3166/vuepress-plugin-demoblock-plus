@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.4.0...v1.4.1) (2021-11-10)
+
+
+### Features
+
+* message toast style ([80152b9](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/80152b92852bab5ecef9d22174324dc486584cd5))
+
+
+
 # [1.4.0](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.3.2...v1.4.0) (2021-11-10)
 
 
