@@ -59,6 +59,7 @@ import { useRouteLocale } from '@vuepress/client'
 import { throttle } from '../../node/demoblock/throttle'
 import clipboardCopy from '../../node/demoblock/clipboard-copy'
 import { stripTemplate, stripScript, stripStyle } from '../../node/demoblock/assist'
+import message from './message'
 
 export default defineComponent({
   name: 'Demo',
@@ -132,9 +133,13 @@ export default defineComponent({
       window.removeEventListener('resize', scrollHandler)
     }
 
-    const onCopy = () => {
-      clipboardCopy(props.sourceCode)
-      alert(locale.value['copy-success-text'])
+    const onCopy = async () => {
+      try {
+        await clipboardCopy(props.sourceCode)
+        message.info(locale.value['copy-success-text'])
+      } catch (err) {
+        message.error(locale.value['copy-success-text'])
+      }
     }
 
     const goCodepen = () => {}
@@ -281,6 +286,7 @@ export default defineComponent({
 }
 
 .demo-block-control .control-button {
+  padding: 13px 0;
   color: var(--c-brand);
   font-size: 14px;
   font-weight: 500;
