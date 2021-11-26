@@ -12,7 +12,7 @@
 <template>
   <div class="card-wrap">
     <div class="card">{{ title }}</div>
-    <el-button type="primary" @click="onClick">点击</el-button>
+    <el-button style="margin-left: 10px" type="primary" @click="onClick">点击</el-button>
   </div>
 </template>
 
@@ -65,7 +65,7 @@ setup typescript 用法。
 <template>
   <div class="card-wrap">
     <div class="card">{{ title }}</div>
-    <el-button type="primary" @click="onClick">点击</el-button>
+    <el-button style="margin-left: 10px" type="primary" @click="onClick">点击</el-button>
   </div>
 </template>
 
