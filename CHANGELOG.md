@@ -1,3 +1,12 @@
+## [1.4.2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.4.1...v1.4.2) (2021-11-26)
+
+
+### Bug Fixes
+
+* folded width of the demoblock ([bbd9554](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/bbd9554080409295ee0745d650948ce9dc06dd84))
+
+
+
 ## [1.4.1](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.4.0...v1.4.1) (2021-11-10)
 
 
