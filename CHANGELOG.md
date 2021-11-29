@@ -1,3 +1,12 @@
+# [1.5.0-beta.1](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.4.2...v1.5.0-beta.1) (2021-11-29)
+
+
+### Features
+
+* support vuepress darkMode, support shiki css-variables and custom demoblock style ([b251cb2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/b251cb2d29ee8c4211e3ed244779f001b7956917))
+
+
+
 ## [1.4.2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.4.1...v1.4.2) (2021-11-26)
 
 
