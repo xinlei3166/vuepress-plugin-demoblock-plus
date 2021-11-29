@@ -5,14 +5,46 @@
   --font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   //--c-brand: #646cff;
   //--c-brand-light: #747bff;
-  --code-bg-color: #f9fafb;
   --code-line-height: 24px;
   --code-font-size: 14px;
   --code-font-family: var(--font-family-mono);
-  --demoblock-border: #eaecef;
+  --code-bg-color: #f9fafb;
+  --demoblock-border: var(--c-border);
   --demoblock-control: #d3dce6;
   --demoblock-control-bg: var(--c-bg);
   --demoblock-control-bg-hover: #f9fafc;
+  --demoblock-description-bg: var(--c-bg);
+  // shiki light
+  --shiki-color-text: #24292f;
+  --shiki-color-background: #ffffff;
+  --shiki-token-constant: #0550ae;
+  --shiki-token-string: #24292f;
+  --shiki-token-comment: #6e7781;
+  --shiki-token-keyword: #cf222e;
+  --shiki-token-parameter: #24292f;
+  --shiki-token-function: #8250df;
+  --shiki-token-string-expression: #116329;
+  //--shiki-token-punctuation: #000011;
+  //--shiki-token-link: #000012;
+}
+
+html.dark {
+  --code-bg-color: #282c34;
+  --demoblock-control: #8b9eb0;
+  --demoblock-control-bg-hover: var(--c-bg);
+  --demoblock-description-bg: var(--code-bg-color);
+  // shiki dark
+  --shiki-color-text: #c9d1d9;
+  --shiki-color-background: #0d1117;
+  --shiki-token-constant: #79c0ff;
+  --shiki-token-string: #a5d6ff;
+  --shiki-token-comment: #8b949e;
+  --shiki-token-keyword: #ff7b72;
+  --shiki-token-parameter: #c9d1d9;
+  --shiki-token-function: #d2a8ff;
+  --shiki-token-string-expression: #7ee787;
+  //--shiki-token-punctuation: #000011;
+  //--shiki-token-link: #000012;
 }
 
 // vuepress

@@ -36,6 +36,7 @@
     "@vuepress/plugin-shiki": "^2.0.0-beta.24",
     "lodash-es": "^4.17.21",
     "markdown-it": "^12.0.4",
+    "shiki": "^0.9.13",
     "vuepress-vite": "^2.0.0-beta.24"
   },
   "devDependencies": {

@@ -24,7 +24,7 @@ module.exports = {
     logo: '/logo.png',
     docsDir: 'docs',
     docsBranch: 'master',
-    darkMode: false,
+    darkMode: true,
 
     // navbar
     navbar: [
@@ -60,10 +60,14 @@ module.exports = {
     // options for markdown-it-toc
     toc: { level: [1, 2] },
 
-    extractHeaders: { level: [ 'h2', 'h3', 'h4' ] }
+    extractHeaders: { level: [ 'h2', 'h3', 'h4' ] },
+
+    // disable line-numbers
+    code: { lineNumbers :false }
   },
   plugins: [
     [require('../../node'), {
+      theme: 'css-variables',
       locales,
       cssPreprocessor: 'less',
       scriptImports: ["import * as ElementPlus from 'element-plus'"],

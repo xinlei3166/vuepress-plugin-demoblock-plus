@@ -2,7 +2,7 @@
 // 参考 https://github.com/calebman/vuepress-plugin-demo-container/blob/master/src/index.js
 const mdContainer = require('markdown-it-container')
 
-const blockPlugin = md => {
+const blockPlugin = (md, options) => {
   md.use(mdContainer, 'demo', {
     validate(params) {
       return params.trim().match(/^demo\s*(.*)$/)
@@ -12,9 +12,9 @@ const blockPlugin = md => {
       if (tokens[idx].nesting === 1) {
         // const description = m && m.length > 1 ? m[1] : ''
         const content = tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : ''
-        return `<demo sourceCode="${md.utils.escapeHtml(content)}">${
-          content ? `<!--vue-demo:${content}:vue-demo-->` : ''
-        }`
+        return `<demo customClass="${options.customClass}" sourceCode="${md.utils.escapeHtml(
+          content
+        )}">${content ? `<!--vue-demo:${content}:vue-demo-->` : ''}`
       }
       return '</demo>'
     }

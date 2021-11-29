@@ -10,10 +10,24 @@ const defaultLocales = {
   }
 }
 
+/**
+ * demoblockPlugin
+ * @param customClass demoblock classname
+ * @param locales i18n
+ * @param theme shiki theme css-variables/github-light/github-dark ...
+ * @param langs shiki langs
+ * @param lang shiki lang
+ * @param cssPreprocessor less/scss
+ * @param scriptImports
+ * @param scriptReplaces
+ * @param app
+ * @return {{clientAppEnhanceFiles, name: string, define: {__DEMOBLOCK_LOCALES__: {'/': {'show-text': string, 'copy-success-text': string, 'hide-text': string, 'copy-button-text': string}}}, extendsMarkdown: ((function(*=): Promise<void>)|*)}}
+ */
 const demoblockPlugin = (
   {
+    customClass = '',
     locales = {},
-    theme = 'github-light',
+    theme = 'css-variables',
     langs = [],
     lang = 'vue',
     cssPreprocessor = '',
@@ -29,6 +43,7 @@ const demoblockPlugin = (
       await shiki({ theme, langs }).extendsMarkdown(md)
       const { demoBlockPlugin } = require('./demoblock')
       md.use(demoBlockPlugin, {
+        customClass,
         lang,
         cssPreprocessor,
         scriptImports,

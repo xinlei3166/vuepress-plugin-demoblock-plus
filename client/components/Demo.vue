@@ -204,6 +204,10 @@ export default defineComponent({
   box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
 }
 
+html.dark .demo-block.hover {
+  box-shadow: unset;
+}
+
 .source {
   box-sizing: border-box;
   padding: 24px;
@@ -228,7 +232,7 @@ export default defineComponent({
   color: var(--c-text);
   word-break: break-word;
   margin: 10px 10px 6px 10px;
-  background-color: var(--c-bg);
+  background-color: var(--demoblock-description-bg);
 }
 
 .demo-block-control {

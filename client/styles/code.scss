@@ -8,6 +8,15 @@ code {
   background: #f6f7f9;
 }
 
+html.dark code {
+  color: var(--c-text-lighter);
+  background: var(--c-bg-light);
+}
+
+html.dark [class*='language-'] code {
+  background: transparent;
+}
+
 [class*='language-'] code {
   line-height: var(--code-line-height);
   font-size: var(--code-font-size);
