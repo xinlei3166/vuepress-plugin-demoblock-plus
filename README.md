@@ -90,8 +90,16 @@ plugins: [
 ]
 ```
 
+
 ## 自定义主题
+支持vuepress darkMode，.vuepress/config.js 文件中配置 `darkMode: true`
+
+```
+themeConfig: { darkMode: true }
+```
+
 使用 shiki 默认自带的主题代码高亮
+
 ```js
 plugins: [
   ['vuepress-plugin-demoblock-plus', {
@@ -100,7 +108,7 @@ plugins: [
 ]
 ```
 
-使用 shiki css-variables 自定义代码高亮，theme 参数设置为 css-variables
+使用 shiki css-variables 自定义代码高亮，theme 参数设置为 `css-variables`
 ```css
 :root {
   --shiki-color-text: #24292f;
@@ -112,8 +120,8 @@ plugins: [
   --shiki-token-parameter: #24292f;
   --shiki-token-function: #8250df;
   --shiki-token-string-expression: #116329;
-  --shiki-token-punctuation: #000011;
-  --shiki-token-link: #000012;
+  // --shiki-token-punctuation: #000011;
+  // --shiki-token-link: #000012;
 }
 
 html.dark {
@@ -126,8 +134,8 @@ html.dark {
   --shiki-token-parameter: #c9d1d9;
   --shiki-token-function: #d2a8ff;
   --shiki-token-string-expression: #7ee787;
-  --shiki-token-punctuation: #000011;
-  --shiki-token-link: #000012;
+  // --shiki-token-punctuation: #000011;
+  // --shiki-token-link: #000012;
 }
 ```
 
@@ -210,5 +218,4 @@ const onClick = () => {
 }
 </script>
 ```
-
 

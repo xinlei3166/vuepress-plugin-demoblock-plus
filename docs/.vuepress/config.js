@@ -67,6 +67,7 @@ module.exports = {
   },
   plugins: [
     [require('../../node'), {
+      customClass: 'demoblock-custom',
       theme: 'css-variables',
       locales,
       cssPreprocessor: 'less',
