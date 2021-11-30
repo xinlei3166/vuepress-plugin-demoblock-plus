@@ -139,6 +139,10 @@ html.dark {
 }
 ```
 
+> 如果出现类似这个错误 `Error: ENOENT: no such file or directory, node_modules/shiki/themes/css-variables.json`,
+> 这是因为 `shiki css-variables` 需要更高版本才能使用，删除 `node_modules`，重新安装 `@vuepress/plugin-shiki` 和 `vuepress-vite`
+
+
 通过配置 customClass 类名称，自定义demoblock样式
 ```js
 plugins: [
