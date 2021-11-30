@@ -1,3 +1,7 @@
+# [1.5.0](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.5.0-beta.2...v1.5.0) (2021-11-30)
+
+
+
 # [1.5.0-beta.2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.5.0-beta.1...v1.5.0-beta.2) (2021-11-30)
 
 
