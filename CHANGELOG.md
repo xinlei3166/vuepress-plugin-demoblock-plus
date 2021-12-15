@@ -1,3 +1,12 @@
+## [1.5.1](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.5.0...v1.5.1) (2021-12-15)
+
+
+### Bug Fixes
+
+* shiki css var --shiki-token-punctuation color ([699763e](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/699763e6912b363b943b9deff8eb764071633fd2))
+
+
+
 # [1.5.0](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.5.0-beta.2...v1.5.0) (2021-11-30)
 
 
