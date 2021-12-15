@@ -119,9 +119,9 @@ plugins: [
   --shiki-token-keyword: #cf222e;
   --shiki-token-parameter: #24292f;
   --shiki-token-function: #8250df;
-  --shiki-token-string-expression: #116329;
-  // --shiki-token-punctuation: #000011;
-  // --shiki-token-link: #000012;
+  --shiki-token-string-expression: #0a3069; // #116329
+  --shiki-token-punctuation: #24292f;
+  //--shiki-token-link: #000012;
 }
 
 html.dark {
@@ -133,9 +133,9 @@ html.dark {
   --shiki-token-keyword: #ff7b72;
   --shiki-token-parameter: #c9d1d9;
   --shiki-token-function: #d2a8ff;
-  --shiki-token-string-expression: #7ee787;
-  // --shiki-token-punctuation: #000011;
-  // --shiki-token-link: #000012;
+  --shiki-token-string-expression: #a5d6ff; // #7ee787;
+  --shiki-token-punctuation: #c9d1d9;
+  //--shiki-token-link: #000012;
 }
 ```
 
