@@ -37,12 +37,14 @@ function pad(source) {
 
 const templateReplaceRegex = /<template>([\s\S]+)<\/template>/g
 
-function genInlineComponentText(template, script, options) {
+function genInlineComponentText(id, template, script, options) {
   let source = template
   if (templateReplaceRegex.test(source)) {
     source = source.replace(templateReplaceRegex, '$1')
   }
+  console.log(`inline-component-${id}`)
   const finalOptions = {
+    id: `inline-component-${id}`,
     source: `${source}`,
     filename: 'inline-component', // TODO：这里有待调整
     compiler: TemplateCompiler,
