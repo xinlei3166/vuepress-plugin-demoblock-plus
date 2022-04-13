@@ -42,7 +42,6 @@ function genInlineComponentText(id, template, script, options) {
   if (templateReplaceRegex.test(source)) {
     source = source.replace(templateReplaceRegex, '$1')
   }
-  console.log(`inline-component-${id}`)
   const finalOptions = {
     id: `inline-component-${id}`,
     source: `${source}`,
