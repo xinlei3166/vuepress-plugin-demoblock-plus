@@ -38,7 +38,7 @@ const demoblockPlugin = (
 ) => {
   return {
     name: 'vuepress-plugin-demoblock-plus',
-    clientAppEnhanceFiles: path.resolve(__dirname, '../client/clientAppEnhance.js'),
+    clientConfigFile: path.resolve(__dirname, '../client/client.js'),
     extendsMarkdown: async md => {
       await shiki({ theme, langs }).extendsMarkdown(md)
       const { demoBlockPlugin } = require('./demoblock')
