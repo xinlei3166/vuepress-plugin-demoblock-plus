@@ -80,7 +80,10 @@ interface IObject {
 const title = ref<any>('vuepress-plugin-demoblock-plus')
 
 const onClick = () => {
-  ElMessage('消息')
+  ElMessage({
+    message: '消息.',
+    type: 'success'
+  })
 }
 </script>
 

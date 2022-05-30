@@ -1,3 +1,6 @@
+const { defaultTheme } = require('@vuepress/theme-default')
+const demoblockPlugin = require("../../node/index");
+
 const locales = {
   '/': {
     'hide-text': 'Hide',
@@ -19,7 +22,7 @@ module.exports = {
   head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
   base: process.env.BASE || '/',
   port: 3000,
-  themeConfig: {
+  theme: defaultTheme({
     repo: 'xinlei3166/vuepress-plugin-demoblock',
     logo: '/logo.png',
     docsDir: 'docs',
@@ -32,7 +35,8 @@ module.exports = {
     ],
 
     // sidebar
-    sidebar: { '/guide/': [
+    sidebar: {
+      '/guide/': [
         {
           text: '指南',
           link: '/guide/'
@@ -52,7 +56,7 @@ module.exports = {
     editLinkText: '在 GitHub 上编辑此页',
     lastUpdatedText: '上次更新',
     contributorsText: '贡献者',
-  },
+  }),
   markdown: {
     // options for markdown-it-anchor
     anchor: { permalink: false, level: [1, 2] },
@@ -60,26 +64,28 @@ module.exports = {
     // options for markdown-it-toc
     toc: { level: [1, 2] },
 
-    extractHeaders: { level: [ 'h2', 'h3', 'h4' ] },
+    extractHeaders: { level: ['h2', 'h3', 'h4'] },
 
     // disable line-numbers
-    code: { lineNumbers :false }
+    code: { lineNumbers: false }
   },
   plugins: [
-    [require('../../node'), {
+    demoblockPlugin({
       customClass: 'demoblock-custom',
       theme: 'css-variables',
       locales,
       cssPreprocessor: 'less',
       scriptImports: ["import * as ElementPlus from 'element-plus'"],
       scriptReplaces: [
-        { searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
+        {
+          searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
           replaceValue: 'const { defineComponent: _defineComponent } = Vue'
         },
-        { searchValue: /import ({.*}) from 'element-plus'/g,
+        {
+          searchValue: /import ({.*}) from 'element-plus'/g,
           replaceValue: (s, s1) => `const ${s1} = ElementPlus`
         }
       ]
-    }]
+    }),
   ]
 }
