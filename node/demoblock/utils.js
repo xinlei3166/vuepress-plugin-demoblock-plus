@@ -45,7 +45,7 @@ function genInlineComponentText(id, template, script, options) {
   const finalOptions = {
     id: `inline-component-${id}`,
     source: `${source}`,
-    filename: 'inline-component', // TODO：这里有待调整
+    filename: `inline-component-${id}`,
     compiler: TemplateCompiler,
     compilerOptions: {
       mode: 'function'
