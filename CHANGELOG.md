@@ -1,3 +1,17 @@
+## [1.5.2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.5.1...v1.5.2) (2022-05-30)
+
+
+### Bug Fixes
+
+* require ID's warning ([529b1d6](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/529b1d639c88051164cce4f4a2da7ba110218b12))
+
+
+### Features
+
+* inline-component-filename ([d0bc874](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/d0bc874879014a6f52858c22b271cd4dc05a9f9f))
+
+
+
 ## [1.5.1](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.5.0...v1.5.1) (2021-12-15)
 
 
