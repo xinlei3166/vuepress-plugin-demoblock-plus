@@ -49,16 +49,15 @@ import {
   reactive,
   computed,
   watch,
-  defineComponent,
   nextTick,
   onBeforeUnmount,
-  onMounted
+  onMounted,
+  defineComponent
 } from 'vue'
 import { useRoute } from 'vue-router'
 import { useRouteLocale } from '@vuepress/client'
-import { throttle } from '../../node/demoblock/throttle'
-import clipboardCopy from '../../node/demoblock/clipboard-copy'
-import { stripTemplate, stripScript, stripStyle } from '../../node/demoblock/assist'
+import { useClipboard, useThrottleFn } from '@vueuse/core'
+import { stripTemplate, stripScript, stripStyle } from '../utils'
 import message from './message'
 
 export default defineComponent({
@@ -72,77 +71,21 @@ export default defineComponent({
       default: () => ({})
     }
   },
-  setup(props) {
+  setup(props, { slots }) {
+    // ====================== Hooks ======================
+    const route = useRoute()
+    const { copy } = useClipboard()
+
+    // ====================== Lifecycle ======================
     const hover = ref(false)
     const fixedControl = ref(false)
     const isExpanded = ref(false)
-    const codepen = reactive({
-      // html: stripTemplate(props.sourceCode),
-      // script: stripScript(props.sourceCode),
-      // style: stripStyle(props.sourceCode)
-    })
 
-    const route = useRoute()
-    const blockClass = computed(() => {
-      const pathArr = route.path.split('/')
-      const component = pathArr[pathArr.length - 1].split('.')[0]
-      return `demo-${component}`
-    })
-
-    const onClickControl = () => {
-      isExpanded.value = !isExpanded.value
-      hover.value = isExpanded.value
-    }
-
-    const routeLocale = useRouteLocale()
-    const locale = computed(() => {
-      return props.locales[routeLocale.value] ?? props.locales['/']
-    })
-
-    const controlText = computed(() => {
-      return isExpanded.value ? locale.value['hide-text'] : locale.value['show-text']
-    })
-
-    // template refs
-    const highlight = ref(null)
-    const description = ref(null)
-    const meta = ref(null)
-    const control = ref(null)
-    const demoBlock = ref(null)
-
-    const codeAreaHeight = computed(() => {
-      if (description.value) {
-        return description.value.clientHeight + highlight.value.clientHeight + 20
-      }
-      return highlight.value.clientHeight
-    })
-
-    const _scrollHandler = () => {
-      const { top, bottom, left } = meta.value.getBoundingClientRect()
-      const innerHeight = window.innerHeight || document.body.clientHeight
-      fixedControl.value = bottom > innerHeight && top + 44 <= innerHeight
-      control.value.style.left = fixedControl.value ? `${left}px` : '0'
-      const dv = fixedControl.value ? 1 : 2
-      control.value.style.width = `${demoBlock.value.offsetWidth - dv}px`
-    }
-
-    const scrollHandler = throttle(_scrollHandler, 200)
-
-    const removeScrollHandler = () => {
-      window.removeEventListener('scroll', scrollHandler)
-      window.removeEventListener('resize', scrollHandler)
-    }
-
-    const onCopy = async () => {
-      try {
-        await clipboardCopy(props.sourceCode)
-        message.info(locale.value['copy-success-text'])
-      } catch (err) {
-        message.error(locale.value['copy-success-text'])
-      }
-    }
-
-    const goCodepen = () => {}
+    const highlight = ref()
+    const description = ref()
+    const meta = ref()
+    const control = ref()
+    const demoBlock = ref()
 
     watch(isExpanded, val => {
       meta.value.style.height = val ? `${codeAreaHeight.value + 1}px` : '0'
@@ -171,6 +114,68 @@ export default defineComponent({
     onBeforeUnmount(() => {
       removeScrollHandler()
     })
+
+    const _scrollHandler = () => {
+      const { top, bottom, left } = meta.value.getBoundingClientRect()
+      const innerHeight = window.innerHeight || document.body.clientHeight
+      fixedControl.value = bottom > innerHeight && top + 44 <= innerHeight
+      control.value.style.left = fixedControl.value ? `${left}px` : '0'
+      const dv = fixedControl.value ? 1 : 2
+      control.value.style.width = `${demoBlock.value.offsetWidth - dv}px`
+    }
+    const scrollHandler = useThrottleFn(_scrollHandler, 200)
+
+    const removeScrollHandler = () => {
+      window.removeEventListener('scroll', scrollHandler)
+      window.removeEventListener('resize', scrollHandler)
+    }
+
+    // ====================== Components ======================
+    const blockClass = computed(() => {
+      const pathArr = route.path.split('/')
+      const component = pathArr[pathArr.length - 1].split('.')[0]
+      return `demo-${component}`
+    })
+
+    // Codepen
+    const codepen = reactive({
+      // html: stripTemplate(props.sourceCode),
+      // script: stripScript(props.sourceCode),
+      // style: stripStyle(props.sourceCode)
+    })
+    const goCodepen = () => {}
+
+    // Expand
+    const onClickControl = () => {
+      isExpanded.value = !isExpanded.value
+      hover.value = isExpanded.value
+    }
+
+    const routeLocale = useRouteLocale()
+    const locale = computed(() => {
+      return props.locales[routeLocale.value] ?? props.locales['/']
+    })
+
+    const controlText = computed(() => {
+      return isExpanded.value ? locale.value['hide-text'] : locale.value['show-text']
+    })
+
+    const codeAreaHeight = computed(() => {
+      if (description.value) {
+        return description.value.clientHeight + highlight.value.clientHeight + 20
+      }
+      return highlight.value.clientHeight
+    })
+
+    // Copy
+    const onCopy = async () => {
+      try {
+        copy(props.sourceCode)
+        message.info(locale.value['copy-success-text'])
+      } catch (err) {
+        message.error(locale.value['copy-success-text'])
+      }
+    }
 
     return {
       blockClass,

@@ -1,10 +1,12 @@
-const { stripScript, stripStyle, stripTemplate, genInlineComponentText } = require('./utils')
-const os = require('os')
+import { stripScript, stripStyle, stripTemplate, genInlineComponentText } from './utils'
+import os from 'os'
+import type { DemoblockPluginOptions } from '../types/index.js'
+
 let seed = 0
 
-module.exports = function (content, options) {
+const render = (content: string, options: DemoblockPluginOptions) => {
   if (!content) {
-    return content
+    return
   }
   const startTag = '<!--vue-demo:'
   const startTagLen = startTag.length
@@ -42,7 +44,7 @@ module.exports = function (content, options) {
   if (componenetsString) {
     pageScript = `<script lang="ts">
       import * as Vue from 'vue'
-      ${options?.scriptImports.join(os.EOL)}
+      ${options?.scriptImports?.join(os.EOL)}
       export default {
         name: 'component-doc',
         components: {
@@ -59,7 +61,7 @@ module.exports = function (content, options) {
   styleArr = [...new Set(styleArr)]
   let styleString = ''
   const preprocessors = ['scss', 'sass', 'less', 'stylus']
-  const _style = preprocessors.includes(options.cssPreprocessor)
+  const _style = preprocessors.includes(options.cssPreprocessor!)
     ? `style lang="${options.cssPreprocessor}"`
     : 'style'
   // 支持css预处理器
@@ -75,3 +77,5 @@ module.exports = function (content, options) {
     style: styleString
   }
 }
+
+export default render

@@ -2,7 +2,7 @@ module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser', // Specifies the ESLint parser
-    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
+    ecmaVersion: 'latest', // Allows for the parsing of modern ECMAScript features
     sourceType: 'module', // Allows for the use of imports
     ecmaFeatures: {
       tsx: true,
@@ -43,6 +43,12 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 0,
     '@typescript-eslint/no-unused-vars': 1,
     '@typescript-eslint/no-var-requires': 0,
-    '@typescript-eslint/consistent-type-imports': 1
+    '@typescript-eslint/consistent-type-imports': 1,
+    '@typescript-eslint/no-this-alias': [
+      'error',
+      {
+        allowedNames: [ 'self', 'context' ], // Allow `const self = this`; `[]` by default
+      },
+    ],
   }
 }

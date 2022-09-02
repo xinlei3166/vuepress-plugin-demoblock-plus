@@ -1,5 +1,6 @@
-const { defaultTheme } = require('@vuepress/theme-default')
-const demoblockPlugin = require("../../node/index");
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from '@vuepress/cli'
+import { demoblockPlugin } from 'vuepress-plugin-demoblock-plus'
 
 const locales = {
   '/': {
@@ -16,7 +17,7 @@ const locales = {
   }
 }
 
-module.exports = {
+export default defineUserConfig({
   title: 'VuePress',
   description: 'Life is short, Keep it simple.',
   head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
@@ -88,4 +89,4 @@ module.exports = {
       ]
     }),
   ]
-}
+})

@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
@@ -10,12 +10,16 @@
     "esModuleInterop": true,
     "allowJs": true,
     "noImplicitAny": true,
-    "lib": ["esnext"],
+    "noImplicitThis": false,
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "types": ["node"]
-//    "baseUrl": ".",
-//    "paths": {
-//      "@/*": ["./src/*"]
-//    }
+    //    "baseUrl": ".",
+    //    "paths": {
+    //      "@/*": ["./src/*"]
+    //    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "exclude": ["node_modules"]

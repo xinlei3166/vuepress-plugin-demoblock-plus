@@ -108,3 +108,12 @@ const title = ref<any>('vuepress-plugin-demoblock-plus')
 ```
 
 :::
+<script lang="ts">
+console.log('script')
+</script>
+
+<style lang="scss">
+body {
+  font-size: 14px;
+}
+</style>
