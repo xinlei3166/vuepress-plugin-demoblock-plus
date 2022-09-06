@@ -50,7 +50,15 @@ plugins: [
 ]
 ```
 
+自定义style tag name
 
+```js
+plugins: [
+  ['vuepress-plugin-demoblock-plus', {
+    customStyleTagName: 'style lang="less"' // style标签会解析为<style lang="less"><style>
+  }]
+]
+```
 
 markdown 中的vue代码被编译为了 vue 函数组件，需要把 import 转换为 require，这里可附加一些其他的转换。 
 vue已经内置做了转换，例如 `import { ref } from 'vue'` 会被转换为 `const { ref } = Vue`。 
@@ -71,7 +79,23 @@ plugins: [
 ]
 ```
 
+多style和多script支持
 
+为了把markdown中的代码渲染为组件，内部已经使用了script和style。如果想在md文件中使用script可以使用script setup，参考下面例子：
+```markdown
+## 多style和多script支持
+code snippet ...
+
+<style>
+body {
+color: red;
+}
+</style>
+
+<script setup lang="ts">
+console.log('script')
+</script>
+```
 
 多语言支持(默认是中文)
 

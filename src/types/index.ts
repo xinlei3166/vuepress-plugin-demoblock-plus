@@ -22,7 +22,7 @@ export interface DemoblockPluginOptions {
   langs?: any[]
   lang?: string
   cssPreprocessor?: 'sass' | 'scss' | 'less' | 'stylus'
-  customStyleTag?: 'sass' | 'scss' | 'less' | 'stylus'
+  customStyleTagName?: string
   scriptImports?: Array<string>
   scriptReplaces?: Array<ScriptReplace>
 }

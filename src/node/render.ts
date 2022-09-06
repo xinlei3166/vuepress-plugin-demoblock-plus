@@ -61,9 +61,15 @@ const render = (content: string, options: DemoblockPluginOptions) => {
   styleArr = [...new Set(styleArr)]
   let styleString = ''
   const preprocessors = ['scss', 'sass', 'less', 'stylus']
-  const _style = preprocessors.includes(options.cssPreprocessor!)
-    ? `style lang="${options.cssPreprocessor}"`
-    : 'style'
+  let _style = 'style'
+  // 支持css预处理器
+  if (preprocessors.includes(options.cssPreprocessor!)) {
+    _style = `style lang="${options.cssPreprocessor}"`
+  }
+  // 支持customStyleTagName
+  if (options.customStyleTagName) {
+    _style = options.customStyleTagName
+  }
   // 支持css预处理器
   if (styleArr && styleArr.length > 0) {
     styleString = `<${_style}>${styleArr.join('')}</style>`

@@ -76,6 +76,7 @@ export default defineUserConfig({
       theme: 'css-variables',
       locales,
       cssPreprocessor: 'less',
+      // customStyleTagName: 'style lang="less"',
       scriptImports: ["import * as ElementPlus from 'element-plus'"],
       scriptReplaces: [
         {
