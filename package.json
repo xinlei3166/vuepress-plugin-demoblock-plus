@@ -24,6 +24,7 @@
     "node"
   ],
   "main": "dist/node/index.mjs",
+  "types": "dist/node/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/node/index.d.ts",
@@ -75,6 +76,7 @@
     "lint-staged": "^10.5.4",
     "npm-run-all": "^4.1.5",
     "picocolors": "latest",
+    "tsx": "latest",
     "prettier": "^2.2.1",
     "simple-git-hooks": "latest",
     "typescript": "^4.8.2",
