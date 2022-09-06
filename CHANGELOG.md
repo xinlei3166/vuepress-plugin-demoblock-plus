@@ -1,3 +1,13 @@
+# [2.0.0-beta.1](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.6.0...v2.0.0-beta.1) (2022-09-06)
+
+
+### Features
+
+* support customStyleTagName ([16527c7](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/16527c797963ca44a21ba6ef4493485936e0f558))
+* v2.0 开发中，使用TypeScript重写，支持vuepress-next新版 ([ed6ef3e](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/ed6ef3e756974aff3f3ba52dcaf3d6605fcf317d))
+
+
+
 # [1.6.0](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.5.1...v1.6.0) (2022-05-30)
 
 
