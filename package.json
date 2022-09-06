@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-demoblock-plus",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0-beta.4",
   "description": "vuepress plugin for demoblock",
   "type": "module",
   "repository": {
@@ -35,6 +35,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "postinstall": "simple-git-hooks",
+    "prepare": "simple-git-hooks",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs --clean-cache",
     "docs:serve": "serve docs/.vuepress/dist",
