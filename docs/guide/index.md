@@ -111,7 +111,7 @@ const title = ref<any>('vuepress-plugin-demoblock-plus')
 
 <style>
 body {
-color: red;
+/*color: red;*/
 }
 </style>
 

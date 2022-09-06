@@ -32,10 +32,10 @@ yarn add -D vuepress-plugin-demoblock-plus
 
 .vuepress/config.js文件中使用插件
 
+import { demoblockPlugin } from 'vuepress-plugin-demoblock-plus'
+
 ```js
-plugins: [
-	['vuepress-plugin-demoblock-plus']
-]
+plugins: [demoblockPlugin()]
 ```
 
 
@@ -43,20 +43,16 @@ plugins: [
 markdown 中的vue代码包含的style内容，会被组合成一个style统一处理，如果需要使用css预处理器，需要提前指定并且手动安装使用的css预处理器。
 
 ```js
-plugins: [
-  ['vuepress-plugin-demoblock-plus', {
-    cssPreprocessor: 'less'
-  }]
-]
+plugins: [demoblockPlugin({ cssPreprocessor: 'less' })]
 ```
 
 自定义style tag name
 
 ```js
 plugins: [
-  ['vuepress-plugin-demoblock-plus', {
+  demoblockPlugin({
     customStyleTagName: 'style lang="less"' // style标签会解析为<style lang="less"><style>
-  }]
+  })
 ]
 ```
 
@@ -65,7 +61,7 @@ vue已经内置做了转换，例如 `import { ref } from 'vue'` 会被转换为
 这里编码风格使用的是单引号，如果你使用的是双引号，需自行处理(详见[#21](https://github.com/xinlei3166/vitepress-theme-demoblock/issues/21))。
 ```js
 plugins: [
-  ['vuepress-plugin-demoblock-plus', {
+  demoblockPlugin({
     scriptImports: ["import * as ElementPlus from 'element-plus'"],
     scriptReplaces: [
       { searchValue: /const ({ defineComponent as _defineComponent }) = Vue/g,
@@ -75,7 +71,7 @@ plugins: [
         replaceValue: (s, s1) => `const ${s1} = ElementPlus`
       }
     ]
-  }]
+  })
 ]
 ```
 
@@ -115,9 +111,7 @@ const locales = {
   }
 }
 
-plugins: [
-	['vuepress-plugin-demoblock-plus', { locales }]
-]
+plugins: [demoblockPlugin({ locales })]
 ```
 
 
@@ -132,9 +126,9 @@ themeConfig: { darkMode: true }
 
 ```js
 plugins: [
-  ['vuepress-plugin-demoblock-plus', {
+  demoblockPlugin({
     theme: 'github-light',
-  }]
+  })
 ]
 ```
 
@@ -176,9 +170,9 @@ html.dark {
 通过配置 customClass 类名称，自定义demoblock样式
 ```js
 plugins: [
-  ['vuepress-plugin-demoblock-plus', {
+  demoblockPlugin({
     customClass: 'demoblcok-custom',
-  }]
+  })
 ]
 ```
 
