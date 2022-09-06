@@ -1,3 +1,12 @@
+# [2.0.0-beta.2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2022-09-06)
+
+
+### Features
+
+* add cjs format ([7f72d85](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/7f72d85dacd995a59ad2d4f0af90be932c2e2f98))
+
+
+
 # [2.0.0-beta.1](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v1.6.0...v2.0.0-beta.1) (2022-09-06)
 
 
