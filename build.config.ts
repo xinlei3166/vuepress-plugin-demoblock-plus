@@ -17,7 +17,7 @@ export default defineBuildConfig({
   ],
   clean: true,
   declaration: true,
-  externals: ['vuepress-vite', 'vue', 'vue-router'],
+  externals: [],
   rollup: {
     emitCJS: true
   }
