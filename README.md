@@ -15,15 +15,15 @@ vuepress-plugin-demoblock-plus 参考了 [Element UI](https://github.com/element
 [查看Demo](https://xinlei3166.github.io/vuepress-demo/)
 
 ## 提示
-由于vuepress最新版修改了插件的使用方式，插件v1.6.0已支持。
-旧版vuepress，插件使用v1.5.1即可。
-待vuepress新版本稳定文档更新后，文档会同步修改。
+由于vuepress版本不稳定，目前锁定版本为2.0.0-beta.51。
+待vuepress新版本稳定文档更新后，文档和插件会同步修改。
 
 ## 安装
 
 ```bash
 npm install -D vuepress-plugin-demoblock-plus
 yarn add -D vuepress-plugin-demoblock-plus
+pnpm add -D vuepress-plugin-demoblock-plus
 ```
 
 
