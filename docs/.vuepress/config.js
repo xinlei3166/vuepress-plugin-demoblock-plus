@@ -1,6 +1,5 @@
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from '@vuepress/cli'
-import { demoblockPlugin } from 'vuepress-plugin-demoblock-plus'
+import { defaultTheme, defineUserConfig } from 'vuepress'
+import { demoblockPlugin } from '../../dist/node/index.mjs'
 
 const locales = {
   '/': {

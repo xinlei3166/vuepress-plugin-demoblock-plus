@@ -49,9 +49,10 @@
   "dependencies": {
     "@mdit-vue/plugin-sfc": "^0.11.1",
     "@vue/compiler-sfc": "^3.2.37",
-    "@vuepress/client": "^2.0.0-beta.51",
-    "@vuepress/plugin-shiki": "^2.0.0-beta.51",
-    "@vuepress/utils": "^2.0.0-beta.51",
+    "@vuepress/plugin-shiki": "2.0.0-beta.51",
+    "@vuepress/utils": "2.0.0-beta.51",
+    "@vuepress/client": "2.0.0-beta.51",
+    "vuepress": "2.0.0-beta.51",
     "@vueuse/core": "^9.1.1",
     "markdown-it": "^13.0.1",
     "markdown-it-container": "^3.0.0",
@@ -81,8 +82,7 @@
     "typescript": "^4.8.2",
     "unbuild": "latest",
     "vitest": "latest",
-    "vue-eslint-parser": "^7.6.0",
-    "vuepress-vite": "^2.0.0-beta.51"
+    "vue-eslint-parser": "^7.6.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged --concurrent false",

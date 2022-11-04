@@ -1,6 +1,6 @@
 import { stripScript, stripStyle, stripTemplate, genInlineComponentText } from './utils'
 import os from 'os'
-import type { DemoblockPluginOptions } from '../types/index.js'
+import type { DemoblockPluginOptions } from '../types'
 
 let seed = 0
 

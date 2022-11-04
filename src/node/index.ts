@@ -32,7 +32,7 @@ export const demoblockPlugin = ({
   locales = {},
   customClass = '',
   theme = 'css-variables',
-  langs = [],
+  langs,
   lang = 'vue',
   cssPreprocessor,
   scriptImports = [],
