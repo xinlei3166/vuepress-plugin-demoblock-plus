@@ -171,7 +171,7 @@ html.dark {
 ```js
 plugins: [
   demoblockPlugin({
-    customClass: 'demoblcok-custom',
+    customClass: 'demoblock-custom',
   })
 ]
 ```
