@@ -28,7 +28,7 @@ pnpm add -D vuepress-plugin-demoblock-plus
 
 
 
-## 用法
+## 快速上手
 
 .vuepress/config.js文件中使用插件
 
@@ -39,6 +39,7 @@ plugins: [demoblockPlugin()]
 ```
 
 
+## 更多用法
 
 markdown 中的vue代码包含的style内容，会被组合成一个style统一处理，如果需要使用css预处理器，需要提前指定并且手动安装使用的css预处理器。
 
@@ -93,7 +94,8 @@ console.log('script')
 </script>
 ```
 
-多语言支持(默认是中文)
+
+## 多语言支持(默认是中文)
 
 ```js
 const locales = {
