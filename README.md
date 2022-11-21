@@ -30,12 +30,17 @@ pnpm add -D vuepress-plugin-demoblock-plus
 
 ## 快速上手
 
-.vuepress/config.js文件中使用插件
+在`.vuepress/config.js`文件中引入插件：
 
-import { demoblockPlugin } from 'vuepress-plugin-demoblock-plus'
 
 ```js
-plugins: [demoblockPlugin()]
+import { demoblockPlugin } from 'vuepress-plugin-demoblock-plus'
+```
+
+然后进行插件配置：
+
+```js
+plugins: [demoblockPlugin({})]
 ```
 
 
