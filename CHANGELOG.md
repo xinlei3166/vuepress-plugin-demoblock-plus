@@ -1,3 +1,12 @@
+## [2.0.2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v2.0.1...v2.0.2) (2022-11-23)
+
+
+### Bug Fixes
+
+* 使用demoblock 插件不传参数报错的问题 ([391d206](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/391d206b6d14500f5ae17972a6aa1cf1e8ec642a))
+
+
+
 ## [2.0.1](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v2.0.0...v2.0.1) (2022-11-10)
 
 
