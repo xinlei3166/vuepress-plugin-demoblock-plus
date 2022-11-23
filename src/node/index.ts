@@ -37,7 +37,7 @@ export const demoblockPlugin = ({
   cssPreprocessor,
   scriptImports = [],
   scriptReplaces = []
-}: DemoblockPluginOptions) => {
+}: DemoblockPluginOptions = {}) => {
   return {
     name: 'vuepress-plugin-demoblock-plus',
     clientConfigFile: path.resolve(__dirname, '../client/config.mjs'),
