@@ -1,3 +1,12 @@
+## [2.0.3](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v2.0.2...v2.0.3) (2022-12-07)
+
+
+### Bug Fixes
+
+* 临时解决 setup 语法报错，锁定 vue 版本为 3.2.44。 ([9502140](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/commit/9502140baf1c7dfeae6a416a3ce4a5dca9ed7a8a))
+
+
+
 ## [2.0.2](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v2.0.1...v2.0.2) (2022-11-23)
 
 

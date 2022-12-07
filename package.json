@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-demoblock-plus",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "vuepress plugin for demoblock",
   "type": "module",
   "repository": {
@@ -80,7 +80,7 @@
     "prettier": "^2.2.1",
     "simple-git-hooks": "latest",
     "typescript": "^4.8.2",
-    "unbuild": "latest",
+    "unbuild": "0.9.4",
     "vitest": "latest",
     "vue-eslint-parser": "^7.6.0"
   },
