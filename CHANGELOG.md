@@ -1,3 +1,7 @@
+## [2.0.4](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v2.0.3...v2.0.4) (2022-12-08)
+
+
+
 ## [2.0.3](https://github.com/xinlei3166/vuepress-plugin-demoblock-plus/compare/v2.0.2...v2.0.3) (2022-12-07)
 
 
